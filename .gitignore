@@ -2,3 +2,5 @@ data/
 .ipynb_checkpoints
 venv/
 .idea/
+settings_nordvpn.txt
+__pycache__/
