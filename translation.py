@@ -22,7 +22,13 @@ categories["item_category_name_en"] = categories["item_category_name"].replace(
 
 # translate shop names - dictionary was built manually
 print("Shops translation...")
-shops["shop_name_en"] = shops["shop_name"].replace(shops_english, regex=True)
+shops["shop_name_en"] = shops["shop_name"].map(shops_english)
+# some mappins are not working - we will correct them manually
+# shops.loc[6, 'shop_name_en'] = 'Voronezh - Plekhanovskaya'
+# shops.loc[23, 'shop_name_en'] = 'Moscow - Budenovskiy - A2'
+# shops.loc[24, 'shop_name_en'] = 'Moscow - Budenovskiy - K7'
+# shops.loc[26, 'shop_name_en'] = 'Moscow - Areal (Belyaevo)'
+# shops.loc[29, 'shop_name_en'] = 'Moscow - New Age (Novokosino)'
 
 # Translate items names - dictionary was build with a python script
 print("Items translation...")
@@ -30,6 +36,6 @@ items["item_name_en"] = items["item_name"].map(items_english)
 
 # export data to csv
 print("Exporting Data...")
-items.to_csv("data/items_en.csv")
-shops.to_csv("data/shops_en.csv")
-categories.to_csv("data/item_categories_en.csv")
+items.to_csv("data/items_en.csv", index=False)
+shops.to_csv("data/shops_en.csv", index=False)
+categories.to_csv("data/item_categories_en.csv", index=False)

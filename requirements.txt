@@ -2,3 +2,4 @@ pandas==1.4.4
 numpy==1.23.2
 googletrans==4.0.0rc1
 nordvpn-switcher==0.3.0
+statsmodels==0.13.2
